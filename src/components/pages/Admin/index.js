@@ -9,7 +9,7 @@ const Admin = ({menus }) => {
         {menus.map((menu) => (
                  <div className="column">
                  <div className="content card" >
-                 <Link   to={`/${menu.id}`} ><img className="img-fluid "  src={menu.qr} /></Link>
+                 <Link   to={`/admin/${menu.id}`} ><img className="img-fluid "  src={menu.qr} /></Link>
                    <Link  to={`/${menu.id}`} style={{textDecoration:"none"}}><h2 >{menu.name}</h2></Link>
                    <Link  to={`/${menu.id}`} style={{textDecoration:"none"}}><p>{menu.description}</p></Link>
                  </div>
