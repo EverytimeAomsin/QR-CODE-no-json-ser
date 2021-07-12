@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { useHistory, Link, useParams } from "react-router-dom";
+import DownloadLink from "react-download-link";
 import "../../../css/showimg.css"
 import "../../../css/View.css"
 
@@ -42,14 +43,11 @@ const View = ({ menus}) => {
        <div>
 
             <div>
-      <form onSubmit={e => onSubmit(e)}>
+      <form onSubmit={handleSubmit}>
         <div className="header">
-          <h1>เพิ่มเมนู</h1>
+          <h1>View</h1>
         </div>
-        <Link style={{ marginBottom: '3px', textDecoration: "none" }}
-
-          to={`/admin`}
-        ><button className="button button1" style={{ marginTop: '15px' }}>กลับหน้าผู้ดูแล</button></Link>
+        
         <div className="row">
 
           <div className="col-6 col-s-12 menu">
@@ -66,12 +64,19 @@ const View = ({ menus}) => {
           <div className="col-6 col-s-12">
 
             <div className="flex-parent  jc-center">
-             
+            <img
+                                src={img}
+                                onChange={(e) => setImg(e.target.value)}
+                            />
+                            <img
+                                src={img}
+                                onChange={(e) => setImg(e.target.value)}
+                            />
             </div>
 
             <div className="flex-parentbt  jc-center " style={{marginTop:'15px'}}>
-              <button className="button button1" type="button" > โหลด QR-CODE</button>
-              <button className=" button button1">บันทึกเมนู</button>
+              <button className="button button1" style={{marginLeft:'10px'}} type="button" > โหลด QR-CODE</button>
+              <Link to={`/admin`}><button className="button button3">กลับหน้าผู้ดูแล</button></Link>
 
             </div>
           </div>
