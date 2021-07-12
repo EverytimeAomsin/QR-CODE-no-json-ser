@@ -5,7 +5,15 @@ img {
     width: 100vw;
     text-align: center;
   }
-  
+  p{
+    display: inline;
+  }
+  .showtext{
+    font-size: large;
+    text-Align:left;
+    margin-Left:30px;
+    margin-Top:8px;
+  }
   .row::after {
     content: "";
     clear: both;
