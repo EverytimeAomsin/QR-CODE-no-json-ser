@@ -32,7 +32,7 @@ npm start
 
 
 
-- [React]
+- [React.js]
 - [redux] 
 - [react-router-dom] 
 
