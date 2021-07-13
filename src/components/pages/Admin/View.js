@@ -3,7 +3,8 @@ import { connect } from "react-redux";
 import { useHistory, Link, useParams } from "react-router-dom";
 import DownloadLink from "react-download-link";
 
-import "../../../css/showimg.css"
+import GG from "../../../components/menu1.jpg"
+
 import "../../../css/View.css"
 
 const View = ({ menus }) => {
@@ -45,6 +46,7 @@ const View = ({ menus }) => {
     <div>
 
       <div>
+      {currentMenu ? (
         <form onSubmit={handleSubmit}>
           <div className="header">
             <h1>View</h1>
@@ -66,19 +68,19 @@ const View = ({ menus }) => {
             </div>
             <div className="col-6 col-s-12">
 
-              <div className="flex-parent  jc-center">
+              <div className="flex-parentbt ">
                 <img
-                  src={img}
+                  src={"http://localhost:3000"+img}
                   onChange={(e) => setImg(e.target.value)}
                 />
                 <img
-                  src={img}
-                  onChange={(e) => setImg(e.target.value)}
+                  src={qr}
+                  onChange={(e) => setQr(e.target.value)}
                 />
               </div>
 
               <div className="flex-parentbt  jc-center " style={{ marginTop: '15px' }}>
-                <button className="button button1" style={{ marginLeft: '10px' }} type="button" > โหลด QR-CODE</button>
+                <button className="button button1"  type="button" > โหลด QR-CODE</button>
                 <Link to={`/admin`}><button className="button button3">กลับหน้าผู้ดูแล</button></Link>
 
               </div>
@@ -86,6 +88,9 @@ const View = ({ menus }) => {
 
           </div>
         </form>
+         ) : (
+          <h1 className="text-center">No menu Found</h1>
+      )}
       </div>
     </div>
   );
