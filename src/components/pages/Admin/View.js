@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { useHistory, Link, useParams } from "react-router-dom";
 import DownloadLink from "react-download-link";
 
-import GG from "../../../components/menu1.jpg"
 
 import "../../../css/View.css"
 
