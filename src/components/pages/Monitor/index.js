@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { useHistory, useParams } from "react-router";
 import "../../../css/showimg.css"
+import "../../../css/navbar.css"
 
 const Monitor = ({ menus}) => {
     const { id } = useParams();
@@ -13,31 +14,26 @@ const Monitor = ({ menus}) => {
     useEffect(() => {document.title = "ร้าน "+(currentMenu.name)
         setName(currentMenu.name);
         setDescription(currentMenu.description);
-        setQr(currentMenu.qr);
         setImg(currentMenu.img);
     }, [currentMenu]);
 
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
-    const [qr, setQr] = useState("");
     const [img, setImg] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
        
 
-        const data = {
-            id: currentMenu.id,
-            description,
-            name,
-            img,
-            qr,
-        };
+       
     };
 
     return (
-
-
+        <div>
+              <div className="header">
+              <h1>ร้าน {name}</h1>
+            </div>
+        
         <div className="row d-flex flex-column">
             <div>
                 {currentMenu ? (
@@ -45,7 +41,7 @@ const Monitor = ({ menus}) => {
                         <div style={{marginTop:'10px'}}>
                             <h1>{name}</h1>
                         </div>
-                        <p style={{ backgroundColor: 'white' }}>{description} </p>
+                        <p style={{ backgroundColor: 'white', marginLeft:'10px'}}>{description} </p>
                         <div style={{marginTop:'10px'}}>
                             <img
                                 src={img}
@@ -56,6 +52,7 @@ const Monitor = ({ menus}) => {
                 ) : (
                     <h1 className="text-center">No menu Found</h1>
                 )}
+                </div>
             </div>
         </div>
     );

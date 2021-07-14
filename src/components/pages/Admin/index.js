@@ -1,11 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import NavbarAdmin from "../../Navbar/Navbar1"
+
 import "../../../css/home.css"
 
 const Admin = ({menus }) => {
   return (
     <div>
+      <NavbarAdmin />
         {menus.map((menu) => (
                  <div className="column">
                  <div className="content card" >
