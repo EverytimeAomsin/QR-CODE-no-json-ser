@@ -1,11 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import Navbar from "../../Navbar/Navbar"
+
 import "../../../css/home.css"
 
 const Home = ({menus }) => {
   return (
     <div>
+      <Navbar />
         {menus.map((menu) => (
                  <div className="column">
                  <div className="content card" >

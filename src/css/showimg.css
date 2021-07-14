@@ -27,16 +27,4 @@ img {
     margin: 10px;
 }
 
-/* For medium devices (e.g. tablets) */
-@media (max-width: 420px) {
-    img {
-        width: 100vw;
-    }
-}
 
-/* For large devices (e.g. desktops) */
-@media (max-width: 760px) {
-    img {
-        width: 100vw;
-    }
-}

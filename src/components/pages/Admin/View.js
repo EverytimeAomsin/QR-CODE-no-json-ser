@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { useHistory, Link, useParams } from "react-router-dom";
 import DownloadLink from "react-download-link";
 
-
+import "../../../css/navbar.css"
 import "../../../css/View.css"
 
 const View = ({ menus }) => {
@@ -51,13 +51,7 @@ const View = ({ menus }) => {
     e.preventDefault();
 
 
-    const data = {
-      id: currentMenu.id,
-      description,
-      name,
-      img,
-      qr,
-    };
+    
   };
 
   return (
@@ -65,16 +59,15 @@ const View = ({ menus }) => {
 
     <div>
 
-      <div>
         {currentMenu ? (
           <form onSubmit={handleSubmit}>
-            <div className="header">
-              <h1>View</h1>
+             <div className="header">
+              <h1>ร้าน {name}</h1>
             </div>
 
             <div className="row">
 
-              <div className="col-6 col-s-12 menu">
+              <div className="col-6 col-s-12 menu midp" >
                 <ul>
 
                   <div className="showtext"><p style={{ fontWeight: 'bold' }}>ชื่อ :</p> <p>{name} </p></div>
@@ -89,7 +82,7 @@ const View = ({ menus }) => {
               <div className="col-6 col-s-12">
 
                 <div className="flex-parentbt ">
-                  <img
+                  <img style={{maxWidth:'40%'}}
                     src={"http://localhost:3000" + img}
                     onChange={(e) => setImg(e.target.value)}
                   />
@@ -113,7 +106,6 @@ const View = ({ menus }) => {
         ) : (
           <h1 className="text-center">No menu Found</h1>
         )}
-      </div>
     </div>
   );
 };
