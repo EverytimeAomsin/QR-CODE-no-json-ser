@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useEffect} from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import NavbarAdmin from "../../Navbar/Navbar1"
@@ -6,6 +6,8 @@ import NavbarAdmin from "../../Navbar/Navbar1"
 import "../../../css/home.css"
 
 const Admin = ({menus }) => {
+  useEffect(() => {
+    document.title = "QR-Admin"})
   return (
     <div>
       <NavbarAdmin />

@@ -41,7 +41,7 @@ const Monitor = ({ menus}) => {
                         <div style={{marginTop:'10px'}}>
                             <h1>{name}</h1>
                         </div>
-                        <p style={{ backgroundColor: 'white', marginLeft:'10px'}}>{description} </p>
+                        <p style={{ backgroundColor: 'white', marginLeft:'10px', display:'block' }}>{description} </p>
                         <div style={{marginTop:'10px'}}>
                             <img
                                 src={img}
