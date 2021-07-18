@@ -12,7 +12,7 @@ import NotFound from "./components/pages/Notfound";
 export default () => (
 
   <Router>
-    <div className="App">
+    
 
       <Switch>
         <Route exact path="/" component={() => <Home />} />
@@ -20,11 +20,9 @@ export default () => (
         <Route exact path="/admin/:id" component={() => <View />} />
       <Route exact path="/:id" component={() => <Monitor />} />
        
-       
-
         <Route component={NotFound} />
       </Switch>
-    </div>
+    
   </Router>
 );
 

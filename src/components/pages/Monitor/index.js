@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { useHistory, useParams } from "react-router";
+import { useParams } from "react-router";
 import "../../../css/showimg.css"
 import "../../../css/navbar.css"
 
 const Monitor = ({ menus}) => {
     const { id } = useParams();
-    const history = useHistory();
     const currentMenu = menus.find(
         (menu) => menu.id === parseInt(id)
     );

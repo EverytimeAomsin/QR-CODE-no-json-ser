@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { useHistory, Link, useParams } from "react-router-dom";
-import DownloadLink from "react-download-link";
+import {  Link, useParams } from "react-router-dom";
+
 
 import "../../../css/navbar.css"
 import "../../../css/View.css"
 
 const View = ({ menus }) => {
   const { id } = useParams();
-  const history = useHistory();
   const currentMenu = menus.find(
     (menu) => menu.id === parseInt(id)
   );
