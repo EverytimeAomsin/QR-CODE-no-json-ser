@@ -194,7 +194,7 @@ img {
   
   @media only screen and (min-width: 600px) {
     /* For tablets: */
-   .col-s-1 {
+  /* .col-s-1 {
       width: 8.33%;
     }
   
@@ -245,7 +245,7 @@ img {
   
   @media only screen and (min-width: 768px) {
     /* For desktop: */
-    .col-1 {
+   /* .col-1 {
       width: 8.33%;
     }
   
