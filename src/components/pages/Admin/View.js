@@ -85,9 +85,9 @@ const View = ({ menus }) => {
                     src={"http://localhost:3000" + img}
                     onChange={(e) => setImg(e.target.value)}
                   />
-                  <QRCode
+                  <QRCode classname ="qr-img "
                 value={"http://localhost:3000/" + id}
-                size={420}
+                size={300}
                 level={"H"}
                 includeMargin={true}
               />

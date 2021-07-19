@@ -1,5 +1,7 @@
 
-
+.qr-img{
+  width:20%;
+}
 .column {
   float: left;
   width: 33%;

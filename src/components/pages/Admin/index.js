@@ -18,7 +18,7 @@ const Admin = ({ menus }) => {
           <div className="content card" >
 
             <Link to={`admin/${menu.id}`} style={{ textDecoration: "none" }}>
-              <QRCode
+              <QRCode classname ="qr-img "
                 value={"http://localhost:3000/" + menu.id}
                 size={300}
                 level={"H"}
