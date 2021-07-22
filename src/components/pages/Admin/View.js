@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { useHistory, Link, useParams } from "react-router-dom";
-import DownloadLink from "react-download-link";
+import {  Link, useParams } from "react-router-dom";
+import QRCode from "react-qr-code";
 
 import "../../../css/navbar.css"
 import "../../../css/View.css"
 
 const View = ({ menus }) => {
   const { id } = useParams();
-  const history = useHistory();
   const currentMenu = menus.find(
     (menu) => menu.id === parseInt(id)
   );
@@ -26,26 +25,7 @@ const View = ({ menus }) => {
   const [qr, setQr] = useState("");
   const [img, setImg] = useState("");
 
-  const download = e => {
-    console.log(e.target.href);
-    fetch(e.target.href, {
-      method: "GET",
-      headers: {}
-    })
-      .then(response => {
-        response.arrayBuffer().then(function (buffer) {
-          const url = window.URL.createObjectURL(new Blob([buffer]));
-          const link = document.createElement("a");
-          link.href = url;
-          link.setAttribute("download", "image.svg"); //or any other extension
-          document.body.appendChild(link);
-          link.click();
-        });
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  };
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -73,7 +53,6 @@ const View = ({ menus }) => {
                   <div className="showtext"><p style={{ fontWeight: 'bold' }}>ชื่อ :</p> <p>{name} </p></div>
                   <div className="showtext"><p style={{ fontWeight: 'bold' }}>Description :</p> <p style={{ display: 'block' }}>{description} </p></div>
                   <div className="showtext"><p style={{ fontWeight: 'bold' }}>ที่อยู่ไฟล์รูป :</p> <p>{img} </p></div>
-                  <div className="showtext"><p style={{ fontWeight: 'bold' }}>ที่อยู่ไฟล์ QR :</p> <p>{qr} </p></div>
 
 
 
@@ -86,10 +65,12 @@ const View = ({ menus }) => {
                     src={"http://localhost:3000" + img}
                     onChange={(e) => setImg(e.target.value)}
                   />
-                  <img
-                    src={qr}
-                    onChange={(e) => setQr(e.target.value)}
-                  />
+                  <QRCode classname ="qr-img "
+                value={"http://localhost:3000/" + id}
+                size={300}
+                level={"H"}
+                includeMargin={true}
+              />
                 </div>
 
                 <div className="flex-parentbt  jc-center " style={{ marginTop: '15px' }}>

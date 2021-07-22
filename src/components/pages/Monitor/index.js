@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { useHistory, useParams } from "react-router";
+import { useParams } from "react-router";
 import "../../../css/showimg.css"
 import "../../../css/navbar.css"
 
 const Monitor = ({ menus}) => {
     const { id } = useParams();
-    const history = useHistory();
     const currentMenu = menus.find(
         (menu) => menu.id === parseInt(id)
     );
@@ -41,7 +40,7 @@ const Monitor = ({ menus}) => {
                         <div style={{marginTop:'10px'}}>
                             <h1>{name}</h1>
                         </div>
-                        <p style={{ backgroundColor: 'white', marginLeft:'10px'}}>{description} </p>
+                        <p style={{ backgroundColor: 'white', marginLeft:'10px', display:'block' }}>{description} </p>
                         <div style={{marginTop:'10px'}}>
                             <img
                                 src={img}
