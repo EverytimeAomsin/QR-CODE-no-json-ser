@@ -1,0 +1,70 @@
+button {
+    border: none;
+    outline: none;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .circle {
+    position: fixed;
+    padding: 0;
+    bottom:0;
+    right:0;
+    z-index: 98;
+    margin: 0 auto;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    background-color: #3F51B5;
+    display: flex;
+    transition: 0.2s;
+    text-align: center;
+  }
+  .circle img {
+    margin: auto;
+    width: 30px;
+    height: 30px;
+    transition: 0.5s;
+    transform: rotate(180deg);
+  }
+  .circle:hover, .circle:focus {
+    cursor: pointer;
+    background-color: #606fc7;
+    box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.3);
+  }
+ 
+  .circle:focus ~ .subs button:nth-of-type(4) {
+    transform: translate(75px, 75px) scale(1);
+    opacity: 1;
+    transition: 0.4s;
+  }
+ 
+  .buttona {
+    display: inline-block;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    background-color: #4caf50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+  
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+  
+  .button1 {
+    background-color: white;
+    color: black;
+    border: 2px solid #4caf50;
+  }
+  
+  .button1:hover {
+    background-color: #4caf50;
+    color: white;}

@@ -3,8 +3,8 @@ import { connect } from "react-redux";
 import {  Link, useParams } from "react-router-dom";
 import QRCode from "react-qr-code";
 
-import "../../../css/navbar.css"
 import "../../../css/View.css"
+import "../../../css/buttons.css"
 
 const View = ({ menus }) => {
   const { id } = useParams();
@@ -37,18 +37,18 @@ const View = ({ menus }) => {
   return (
 
 
-    <div>
+    <div className="content card " >
 
         {currentMenu ? (
           <form onSubmit={handleSubmit}>
-             <div className="header">
-              <h1>ร้าน {name}</h1>
-            </div>
+            
+              <h1 className="head-center" style={{backgroundColor:'#ffffff'}}>ร้าน {name}</h1>
+           
 
-            <div className="row">
+            <div className="row " >
 
-              <div className="col-6 col-s-12 menu midp" >
-                <ul>
+              <div className="col-6 col-s-12 menu midp " >
+                <ul style={{backgroundColor:'#ffffff'}} >
 
                   <div className="showtext"><p style={{ fontWeight: 'bold' }}>ชื่อ :</p> <p>{name} </p></div>
                   <div className="showtext"><p style={{ fontWeight: 'bold' }}>Description :</p> <p style={{ display: 'block' }}>{description} </p></div>
@@ -58,6 +58,7 @@ const View = ({ menus }) => {
 
                 </ul>
               </div>
+             
               <div className="col-6 col-s-12">
 
                 <div className="flex-parentbt ">
@@ -74,10 +75,10 @@ const View = ({ menus }) => {
                 </div>
 
                 <div className="flex-parentbt  jc-center " style={{ marginTop: '15px' }}>
-                  <a className="button button1" type="button" href={"http://localhost:3000" + qr}
+                  <a className="buttona button1" type="button" style={{fontSize:'30px'}} href={"http://localhost:3000" + qr}
                     download
                     onClick={e => download(e)}> โหลด QR-CODE</a>
-                  <Link to={`/admin`}><button className="button button3">กลับหน้าผู้ดูแล</button></Link>
+                  <Link to={`/admin`}><button className="buttona button3" style={{fontSize:'20px'}}>กลับหน้าผู้ดูแล</button></Link>
 
                 </div>
               </div>

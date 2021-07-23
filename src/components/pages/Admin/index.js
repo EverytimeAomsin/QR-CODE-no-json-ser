@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import NavbarAdmin from "../../Navbar/Navbar1"
+
 import QRCode from "react-qr-code";
 
 import "../../../css/home.css"
@@ -12,10 +12,10 @@ const Admin = ({ menus }) => {
   })
   return (
     <div>
-      <NavbarAdmin />
+      <h1 className="head-center">QR-Code</h1>
       {menus.map((menu) => (
         <div className="column">
-          <div className="content card" >
+          <div className="contentH cardH shadow" >
 
             <Link to={`admin/${menu.id}`} style={{ textDecoration: "none" }}>
               <QRCode classname ="qr-img "

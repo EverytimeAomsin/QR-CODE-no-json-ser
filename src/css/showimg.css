@@ -3,11 +3,13 @@ h1 {
     text-transform: uppercase;
     font-weight: bold;
     margin-left: 10px;
+    background-color: white;
 }
 p {
     text-transform: lowercase;
     /* font-weight: ;  */
     margin-left: 10px;
+    background-color: white;
 }
 /* For small devices (e.g. smartphones) */
 img {
@@ -21,3 +23,15 @@ img {
 }
 
 
+
+
+
+  .intro-card {
+    padding: 2em;
+    background-color: #fff;
+    box-shadow: var(--shadow-card-hover);
+    margin: 2em auto;
+    border-radius: 16px;
+    max-width: 600px;
+    padding: 0px !important;
+    }
