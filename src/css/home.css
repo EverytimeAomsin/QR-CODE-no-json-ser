@@ -1,7 +1,7 @@
 
 
 .qr-img{
-  width:20%;
+  width:100%;
 }
 .column {
   float: left;
@@ -26,7 +26,7 @@
 
 /* Style the counter cards */
 .cardH {
-
+  border: 1px solid #BFBFBF;
   padding: 16px;
   text-align: center;
 }
@@ -81,7 +81,7 @@
   
 }
 .contentH p {
-  font-size: 20px;
+  font-size: 15px;
   text-transform: lowercase;
   background-color: #FAFAFA;
 }
