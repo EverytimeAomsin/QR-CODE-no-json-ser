@@ -42,7 +42,7 @@ const View = ({ menus }) => {
         {currentMenu ? (
           <form onSubmit={handleSubmit}>
             
-              <h1 className="head-center" style={{backgroundColor:'#ffffff'}}>ร้าน {name}</h1>
+              <h1 className="head-center" >ร้าน {name}</h1>
            
 
             <div className="row " >

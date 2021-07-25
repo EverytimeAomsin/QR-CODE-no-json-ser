@@ -68,7 +68,7 @@
 }
 .contentH > * {
   flex: 1 1 100%;
-  background-color: #FAFAFA ;
+  background-color: #ffffff ;
 }
 
 .contentH h2 {
@@ -77,13 +77,13 @@
   margin: 16px 0;
   letter-spacing: 1px;
   text-transform: uppercase;
-  background-color: #FAFAFA;
+  background-color: #ffffff;
   
 }
 .contentH p {
   font-size: 15px;
   text-transform: lowercase;
-  background-color: #FAFAFA;
+  background-color: #ffffff;
 }
 
 

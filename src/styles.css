@@ -29,6 +29,8 @@
 .head-center  {
   text-align: center;
   margin-top: 50px;
+  background-color:transparent;
+  font-size: 230%;
 }
 
 @media only screen and (min-width: 600px) {

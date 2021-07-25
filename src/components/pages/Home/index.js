@@ -7,7 +7,7 @@ import "../../../css/home.css"
 const Home = ({menus }) => {
   return (
     <>
-     <h1 className="head-center " style={{backgroundColor:'transparent',fontSize:'230%'}}>ร้านค้าที่เปิดให้บริการ</h1>
+     <h1 className="head-center " >ร้านค้าที่เปิดให้บริการ</h1>
         {menus.map((menu) => (
                  <div className="column">
                  <div className="contentH cardH shadowv" >
