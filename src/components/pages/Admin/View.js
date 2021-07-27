@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import {  Link, useParams } from "react-router-dom";
-import QRCode from "react-qr-code";
+import QRCode from 'qrcode';
+import QRCode2 from "react-qr-code";
 
 import "../../../css/View.css"
 import "../../../css/buttons.css"
@@ -11,6 +12,19 @@ const View = ({ menus }) => {
   const currentMenu = menus.find(
     (menu) => menu.id === parseInt(id)
   );
+
+  const [text] = useState('http://localhost:3000/'+(currentMenu.id));
+  const [imageUrl, setImageUrl] = useState('');
+
+  const generateQrCode = async () => {
+    try {
+          const response = await QRCode.toDataURL(text);
+          setImageUrl(response);
+    }catch (error) {
+      console.log(error);
+    }
+  }
+ 
 
   useEffect(() => {
     document.title = "ร้าน " + (currentMenu.name)
@@ -66,18 +80,20 @@ const View = ({ menus }) => {
                     src={"http://localhost:3000" + img}
                     onChange={(e) => setImg(e.target.value)}
                   />
-                  <QRCode classname ="qr-img "
+                 <QRCode2 classname ="qr-img "
                 value={"http://localhost:3000/" + id}
                 size={300}
                 level={"H"}
                 includeMargin={true}
-              />
+        /> 
                 </div>
 
                 <div className="flex-parentbt  jc-center " style={{ marginTop: '15px' }}>
-                  <a className="buttona button1" type="button" style={{fontSize:'30px'}} href={"http://localhost:3000" + qr}
-                    download
-                    onClick={e => download(e)}> โหลด QR-CODE</a>
+                  <a className="buttona button1" type="button" style={{fontSize:'30px'}}  href={imageUrl} download 
+                            color="primary" onClick={() => generateQrCode()}>ดาวน์โหลด QR{imageUrl ? ({ errorCorrectionLevel: 'H' },
+                              <a>
+                                    <img style={{display: 'none'}} sizes='1000px' src={imageUrl} alt="img"/>
+                              </a>) : null}</a>
                   <Link to={`/admin`}><button className="buttona button3" style={{fontSize:'20px'}}>กลับหน้าผู้ดูแล</button></Link>
 
                 </div>
