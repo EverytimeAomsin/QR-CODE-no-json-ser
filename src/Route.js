@@ -16,9 +16,9 @@ export default () => (
       <Switch>
         <Route exact path="/" component={() => <Home />} />
         <Route exact path="/admin" component={() => <Admin />} />
-        <Route exact path="/admin/:id" component={() => <View />} />
-      <Route exact path="/:id" component={() => <Monitor />} />    
-        <Route component={NotFound} />
+        <Route  path="/admin/:id" component={() => <View />} />
+      <Route  path="/:id" component={() => <Monitor />} />    
+        <Route  component={NotFound} />
       </Switch>
     
   </Router>

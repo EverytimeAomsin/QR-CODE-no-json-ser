@@ -113,7 +113,7 @@ const mapStateToProps = (state) => ({
 });
 const mapDispatchToProps = (dispatch) => ({
     updatemenu: (data) => {
-        dispatch({ type: "UPDATE_menu", payload: data });
+        dispatch({  payload: data });
     },
 });
 

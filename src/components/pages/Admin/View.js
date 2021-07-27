@@ -3,27 +3,43 @@ import { connect } from "react-redux";
 import {  Link, useParams } from "react-router-dom";
 import QRCode from 'qrcode';
 import QRCode2 from "react-qr-code";
+import NotFound from '../Notfound/index'
 
 import "../../../css/View.css"
 import "../../../css/buttons.css"
 
 const View = ({ menus }) => {
   const { id } = useParams();
+  try{
+    
+  }catch{
+   
+  }
   const currentMenu = menus.find(
     (menu) => menu.id === parseInt(id)
   );
+
+  var Qrstyle = {
+    errorCorrectionLevel: 'H',
+    type: "svg",
+    width: 800,
+    quality: 0.3,
+    margin: 1
+  }
 
   const [text] = useState('http://localhost:3000/'+(currentMenu.id));
   const [imageUrl, setImageUrl] = useState('');
 
   const generateQrCode = async () => {
     try {
-          const response = await QRCode.toDataURL(text);
+          const response = await QRCode.toDataURL(text, Qrstyle);
           setImageUrl(response);
     }catch (error) {
       console.log(error);
     }
   }
+
+ 
  
 
   useEffect(() => {
@@ -92,7 +108,7 @@ const View = ({ menus }) => {
                   <a className="buttona button1" type="button" style={{fontSize:'30px'}}  href={imageUrl} download 
                             color="primary" onClick={() => generateQrCode()}>ดาวน์โหลด QR{imageUrl ? ({ errorCorrectionLevel: 'H' },
                               <a>
-                                    <img style={{display: 'none'}} sizes='1000px' src={imageUrl} alt="img"/>
+                                    <img style={{display: 'none'}}  src={imageUrl} alt="img"/>
                               </a>) : null}</a>
                   <Link to={`/admin`}><button className="buttona button3" style={{fontSize:'20px'}}>กลับหน้าผู้ดูแล</button></Link>
 
@@ -113,7 +129,7 @@ const mapStateToProps = (state) => ({
 });
 const mapDispatchToProps = (dispatch) => ({
   updatemenu: (data) => {
-    dispatch({ type: "UPDATE_menu", payload: data });
+    dispatch({payload: data });
   },
 });
 
