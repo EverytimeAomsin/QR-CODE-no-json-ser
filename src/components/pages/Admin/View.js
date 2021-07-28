@@ -65,7 +65,7 @@ const View = ({ menus }) => {
   return (
 
 
-    <div className="content card " >
+    <div className="content  " >
 
         {currentMenu ? (
           <form onSubmit={handleSubmit}>

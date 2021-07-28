@@ -98,9 +98,7 @@ const Monitor = ({ menus }) => {
                             onAfterOpen={afterOpenModal}
                             onRequestClose={closeModal}
                             style={customStyles}
-
                         >
-
 
                             <section className="intro-card">
                                 <h1 ref={(_subtitle) => (subtitle = _subtitle)} style={{ marginBottom: '10px' }}>ร้าน {name}<div><hr /></div></h1>

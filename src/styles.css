@@ -5,10 +5,11 @@
 }
 
 @font-face{
-	font-family: 'RSU_light';
-	src: local('RSU_light'),
-	url('./font/RSU_light.woff') format('woff')
+	font-family: 'RSU-Text_Bold';
+	src: local('RSU-Text_Bold'),
+	url('./font/RSU-Text_Bold.woff') format('woff')
 }
+
 
 @font-face{
 	font-family: 'RSU_BOLD';
@@ -22,7 +23,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: RSU_Regular;
+  font-size: 30px;
+  font-family: RSU-Text_Bold;
   
 } 
 

@@ -9,11 +9,12 @@
   padding: 0 0px;
   margin-bottom: 30px;
   padding-top: 50px;
+  
 }
 
 /* Remove extra left and right margins, due to padding */
 .row {
-  margin: 0 -5px;
+  margin: 25px 50px 75px 100px;
 }
 
 /* Clear floats after the columns */
@@ -48,6 +49,7 @@
   margin: 0 0 30px 0;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-family: RSU_BOLD;
   
 }
 .services {
@@ -59,6 +61,7 @@
   flex-wrap: wrap;
   flex: 1;
   margin: 15px;
+  
  
 }
 .contentH img {
@@ -73,15 +76,17 @@
 
 .contentH h2 {
   text-align: center;
-  font-size: 25px;
+  font-weight: bold;
+  font-size: 40px;
   margin: 16px 0;
   letter-spacing: 1px;
   text-transform: uppercase;
   background-color: #ffffff;
+  font-family: RSU_BOLD;
   
 }
 .contentH p {
-  font-size: 20px;
+  
   text-transform: lowercase;
   background-color: #ffffff;
 }
