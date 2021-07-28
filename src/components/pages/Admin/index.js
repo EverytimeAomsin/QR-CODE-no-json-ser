@@ -19,7 +19,7 @@ const Admin = ({ menus }) => {
 
             <Link to={`admin/${menu.id}`} style={{ textDecoration: "none" }}>
               <QRCode classname ="qr-img "
-                value={"http://localhost:3000/" + menu.id}
+                value={"http://192.168.110.126:3000/" + menu.id}
                 size={300}
                 level={"H"}
                 includeMargin={true}

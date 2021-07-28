@@ -25,8 +25,11 @@ const Monitor = ({ menus }) => {
     try {
 
 
-        const currentMenu = menus.find(
+        const currentMenu = menus.find
+
+        (
             (menu) => menu.id === parseInt(id)
+            
         );
 
 
@@ -79,8 +82,8 @@ const Monitor = ({ menus }) => {
 
             <div  >
 
-                {currentMenu ? (
-                    <form onSubmit={handleSubmit}>
+             
+                    <form onSubmit={handleSubmit}>  
                         <div >
                             <button className="circle " onClick={openModal}>
                                 <img src="https://image.flaticon.com/icons/png/512/4263/4263644.png" alt="" />
@@ -111,9 +114,7 @@ const Monitor = ({ menus }) => {
                         </Modal>
                     </form>
 
-                ) : (
-                    <h1 className="text-center">No menu Found</h1>
-                )}
+              
             </div>
         );
     } catch (error) {

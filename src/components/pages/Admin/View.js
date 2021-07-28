@@ -33,7 +33,7 @@ const View = ({ menus }) => {
           const response = await QRCode.toDataURL(text, Qrstyle);
           setImageUrl(response);
     }catch (error) {
-      console.log(error);
+      console.log(error)
     }
   }
 
@@ -94,11 +94,11 @@ const View = ({ menus }) => {
                     src={"http://localhost:3000" + img}
                     onChange={(e) => setImg(e.target.value)}
                   />
-                 <QRCode2 classname ="qr-img "
+                 <QRCode2 className ="qr-img "
                 value={"http://localhost:3000/" + id}
                 size={300}
                 level={"H"}
-                includeMargin={true}
+               
         /> 
                 </div>
 

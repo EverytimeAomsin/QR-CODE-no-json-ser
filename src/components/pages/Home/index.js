@@ -6,7 +6,7 @@ import "../../../css/home.css"
 
 const Home = ({menus }) => {
   return (
-    <>
+    <div className="row">
      <h1 className="head-center " >ร้านค้าที่เปิดให้บริการ</h1>
         {menus.map((menu) => ( 
           <div>
@@ -18,7 +18,7 @@ const Home = ({menus }) => {
                  </div>
                </div></div>
                 ))}
-      </>
+     </div>
           
   );
 };
