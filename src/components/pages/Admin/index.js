@@ -18,11 +18,11 @@ const Admin = ({ menus }) => {
           <div className="contentH cardH shadow" >
 
             <Link to={`admin/${menu.id}`} style={{ textDecoration: "none" }}>
-              <QRCode classname ="qr-img "
+              <QRCode className ="qr-img "
                 value={"http://192.168.110.126:3000/" + menu.id}
                 size={300}
                 level={"H"}
-                includeMargin={true}
+               
               />
             </Link>
             <Link to={`admin/${menu.id}`} style={{ textDecoration: "none" }}><h2 >{menu.name}</h2></Link>

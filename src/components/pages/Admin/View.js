@@ -67,7 +67,7 @@ const View = ({ menus }) => {
 
     <div className="content  " >
 
-        {currentMenu ? (
+        
           <form onSubmit={handleSubmit}>
             
               <h1 className="head-center" >ร้าน {name}</h1>
@@ -115,9 +115,7 @@ const View = ({ menus }) => {
 
             </div>
           </form>
-        ) : (
-          <h1 className="text-center">No menu Found</h1>
-        )}
+       
     </div>
   );
 } catch (error) {
