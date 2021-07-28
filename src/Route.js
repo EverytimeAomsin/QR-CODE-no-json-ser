@@ -7,8 +7,7 @@ import {
 import Home from "./components/pages/Home";
 import Monitor from "./components/pages/Monitor/index";
 import Admin from "./components/pages/Admin/index";
-import View from "./components/pages/Admin/View"
-import NotFound from "./components/pages/Notfound";
+import View from "./components/pages/Admin/View";
 export default () => (
 
   <Router>
@@ -18,7 +17,6 @@ export default () => (
         <Route exact path="/admin" component={() => <Admin />} />
         <Route  path="/admin/:id" component={() => <View />} />
       <Route  path="/:id" component={() => <Monitor />} />    
-        <Route  component={NotFound} />
       </Switch>
     
   </Router>

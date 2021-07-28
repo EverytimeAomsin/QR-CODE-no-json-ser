@@ -12,9 +12,7 @@ const View = ({ menus }) => {
   const { id } = useParams();
   try{
     
-  }catch{
-   
-  }
+  
   const currentMenu = menus.find(
     (menu) => menu.id === parseInt(id)
   );
@@ -106,7 +104,7 @@ const View = ({ menus }) => {
 
                 <div className="flex-parentbt  jc-center " style={{ marginTop: '15px' }}>
                   <a className="buttona button1" type="button" style={{fontSize:'30px'}}  href={imageUrl} download 
-                            color="primary" onClick={() => generateQrCode()}>ดาวน์โหลด QR{imageUrl ? ({ errorCorrectionLevel: 'H' },
+                             onClick={() => generateQrCode()}>ดาวน์โหลด QR{imageUrl ? (
                               <a>
                                     <img style={{display: 'none'}}  src={imageUrl} alt="img"/>
                               </a>) : null}</a>
@@ -122,6 +120,17 @@ const View = ({ menus }) => {
         )}
     </div>
   );
+} catch (error) {
+    return (
+
+
+      <>
+  
+        
+           <NotFound />
+          
+      </>)
+  }
 };
 
 const mapStateToProps = (state) => ({
