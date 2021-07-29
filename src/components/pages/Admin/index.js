@@ -13,8 +13,8 @@ const Admin = ({ menus }) => {
   return (
     <div>
       <h1 className="head-center">QR-Code</h1>
-      {menus.map((menu) => (
-        <div className="column">
+      {menus.map((menu,menus) => (
+        <div className="column" key={menus}>
           <div className="contentH cardH shadow" >
 
             <Link to={`admin/${menu.id}`} style={{ textDecoration: "none" }}>
