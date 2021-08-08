@@ -70,20 +70,15 @@ const Monitor = ({ menus }) => {
 
 
 
-        const handleSubmit = (e) => {
-            e.preventDefault();
-
-
-
-        };
+      
 
         return (
 
 
-            <div  >
+            <>
 
              
-                    <form onSubmit={handleSubmit}>  
+                  
                         <div >
                             <button className="circle " onClick={openModal}>
                                 <img src="https://image.flaticon.com/icons/png/512/4263/4263644.png" alt="" />
@@ -104,7 +99,7 @@ const Monitor = ({ menus }) => {
                         >
 
                             <section className="intro-card">
-                                <h1 ref={(_subtitle) => (subtitle = _subtitle)} style={{ marginBottom: '10px' }}>ร้าน {name}<div><hr /></div></h1>
+                                <h1 ref={(_subtitle) => (subtitle = _subtitle)} >ร้าน {name}<div><hr /></div></h1>
 
                                 <p>{description}</p>
 
@@ -112,10 +107,10 @@ const Monitor = ({ menus }) => {
 
 
                         </Modal>
-                    </form>
+                 
 
               
-            </div>
+            </>
         );
     } catch (error) {
         return (

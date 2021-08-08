@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import {  Link, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import QRCode from 'qrcode';
 import QRCode2 from "react-qr-code";
 import NotFound from '../Notfound/index'
@@ -10,123 +10,118 @@ import "../../../css/buttons.css"
 
 const View = ({ menus }) => {
   const { id } = useParams();
-  try{
-    
-  
-  const currentMenu = menus.find(
-    (menu) => menu.id === parseInt(id)
-  );
+  try {
 
-  var Qrstyle = {
-    errorCorrectionLevel: 'H',
-    type: "svg",
-    width: 800,
-    quality: 0.3,
-    margin: 1
-  }
 
-  const [text] = useState('http://localhost:3000/'+(currentMenu.id));
-  const [imageUrl, setImageUrl] = useState('');
+    const currentMenu = menus.find(
+      (menu) => menu.id === parseInt(id)
+    );
 
-  const generateQrCode = async () => {
-    try {
-          const response = await QRCode.toDataURL(text, Qrstyle);
-          setImageUrl(response);
-    }catch (error) {
-      console.log(error)
+    var Qrstyle = {
+      errorCorrectionLevel: 'H',
+      type: "svg",
+      width: 800,
+      quality: 0.3,
+      margin: 1
     }
-  }
 
- 
- 
+    const [text] = useState('http://localhost:3000/' + (currentMenu.id));
+    const [imageUrl, setImageUrl] = useState('');
 
-  useEffect(() => {
-    document.title = "ร้าน " + (currentMenu.name)
-    setName(currentMenu.name);
-    setDescription(currentMenu.description);
-    setQr(currentMenu.qr);
-    setImg(currentMenu.img);
-  }, [currentMenu]);
-
-  const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
-  const [qr, setQr] = useState("");
-  const [img, setImg] = useState("");
+    const generateQrCode = async () => {
+      try {
+        const response = await QRCode.toDataURL(text, Qrstyle);
+        setImageUrl(response);
+      } catch (error) {
+        console.log(error)
+      }
+    }
 
 
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
 
+    useEffect(() => {
+      document.title = "ร้าน " + (currentMenu.name)
+      setName(currentMenu.name);
+      setDescription(currentMenu.description);
+      setQr(currentMenu.qr);
+      setImg(currentMenu.img);
+    }, [currentMenu]);
 
-    
-  };
-
-  return (
-
-
-    <div className="content  " >
-
-        
-          <form onSubmit={handleSubmit}>
-            
-              <h1 className="head-center" >ร้าน {name}</h1>
-           
-
-            <div className="row " >
-
-              <div className="col-6 col-s-12 menu midp " >
-                <ul style={{backgroundColor:'#ffffff'}} >
-
-                  <div className="showtext"><p style={{ fontWeight: 'bold' }}>ชื่อ :</p> <p>{name} </p></div>
-                  <div className="showtext"><p style={{ fontWeight: 'bold' }}>Description :</p> <p style={{ display: 'block' }}>{description} </p></div>
-                  <div className="showtext"><p style={{ fontWeight: 'bold' }}>ที่อยู่ไฟล์รูป :</p> <p>{img} </p></div>
+    const [name, setName] = useState("");
+    const [description, setDescription] = useState("");
+    const [qr, setQr] = useState("");
+    const [img, setImg] = useState("");
 
 
 
-                </ul>
-              </div>
-             
-              <div className="col-6 col-s-12">
 
-                <div className="flex-parentbt ">
-                  <img style={{maxWidth:'40%'}}
-                    src={"http://localhost:3000" + img}
-                    onChange={(e) => setImg(e.target.value)}
-                  />
-                 <QRCode2 className ="qr-img "
+
+    return (
+
+
+      <div className="contentV  " >
+
+
+
+
+        <h1 className="head-center" >ร้าน {name}</h1>
+
+
+        <div >
+
+          <div className="col-5V .col-s-12V menu midp " >
+            <ul >
+
+              <div className="showtext"><p className="textB ">ชื่อ :</p> <p>{name} </p></div>
+              <div className="showtext"><p className="textB">Description :</p> <p className="contentVD">{description} </p></div>
+              <div className="showtext"><p className="textB">ที่อยู่ไฟล์รูป :</p> <p>{img} </p></div>
+
+
+
+            </ul>
+          </div>
+
+          <div className="col-7V .col-s-12V">
+
+            <div className="flex-parentbt ">
+              <img className="imgV"
+                src={"http://localhost:3000" + img}
+                onChange={(e) => setImg(e.target.value)}
+              />
+              <QRCode2 className="qr-imgV imgV"
                 value={"http://localhost:3000/" + id}
                 size={300}
                 level={"H"}
-               
-        /> 
-                </div>
 
-                <div className="flex-parentbt  jc-center " style={{ marginTop: '15px' }}>
-                  <a className="buttona button1" type="button" style={{fontSize:'30px'}}  href={imageUrl} download 
-                             onClick={() => generateQrCode()}>ดาวน์โหลด QR{imageUrl ? (
-                              <a>
-                                    <img style={{display: 'none'}}  src={imageUrl} alt="img"/>
-                              </a>) : null}</a>
-                  <Link to={`/admin`}><button className="buttona button3" style={{fontSize:'20px'}}>กลับหน้าผู้ดูแล</button></Link>
+              />
+            </div>
 
-                </div>
-              </div>
+            <div className="flex-parentbt  jc-center " >
+              <a className="buttona button1  textB textBS BS2" type="button"   href={imageUrl} download
+                onClick={() => generateQrCode()}>ดาวน์โหลด QR{imageUrl ? (
+                  <a >
+                    <img  src={imageUrl} style={{display:'none'}} alt="img" />
+                  </a>) : null}</a>
+              <Link to={`/admin`}><button className="buttona button3 textB textBS BS1" >กลับหน้าผู้ดูแล</button></Link>
 
             </div>
-          </form>
-       
-    </div>
-  );
-} catch (error) {
+          </div>
+
+        </div>
+
+
+      </div>
+    );
+  } catch (error) {
     return (
 
 
       <>
-  
-        
-           <NotFound />
-          
+
+
+        <NotFound />
+
       </>)
   }
 };
@@ -136,7 +131,7 @@ const mapStateToProps = (state) => ({
 });
 const mapDispatchToProps = (dispatch) => ({
   updatemenu: (data) => {
-    dispatch({payload: data });
+    dispatch({ payload: data });
   },
 });
 

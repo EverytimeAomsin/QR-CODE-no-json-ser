@@ -1,14 +1,16 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link ,useLocation } from "react-router-dom";
 
 import QRCode from "react-qr-code";
 
 import "../../../css/home.css"
 
 const Admin = ({ menus }) => {
+  const currentRoute= window.location.pathname
   useEffect(() => {
     document.title = "QR-Admin"
+    console.log(currentRoute);
   })
   return (
     <div>
@@ -17,7 +19,7 @@ const Admin = ({ menus }) => {
         <div className="column" key={menus}>
           <div className="contentH cardH shadow" >
 
-            <Link to={`admin/${menu.id}`} style={{ textDecoration: "none" }}>
+            <Link to={'/admin/'+`${menu.id}`} >
               <QRCode className ="qr-img "
                 value={"http://192.168.110.126:3000/" + menu.id}
                 size={300}
@@ -25,8 +27,8 @@ const Admin = ({ menus }) => {
                
               />
             </Link>
-            <Link to={`admin/${menu.id}`} style={{ textDecoration: "none" }}><h2 >{menu.name}</h2></Link>
-            <Link to={`admin/${menu.id}`} style={{ textDecoration: "none" }}><p>{menu.description}</p></Link>
+            <Link to={'/admin/'+`${menu.id}`} style={{ textDecoration: "none" }}><h2 >{menu.name}</h2></Link>
+            <Link to={'/admin/'+`${menu.id}`} style={{ textDecoration: "none" }}><p>{menu.description}</p></Link>
           </div>
         </div>
       ))}

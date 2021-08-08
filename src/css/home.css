@@ -1,4 +1,6 @@
-
+.noneDecoration{
+  text-decoration: "none"
+}
 
 .qr-img{
   width:100%;
