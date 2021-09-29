@@ -21,7 +21,7 @@ const Admin = ({ menus }) => {
 
             <Link to={'/admin/'+`${menu.id}`} >
               <QRCode className ="qr-img "
-                value={"http://192.168.110.126:3000/" + menu.id}
+                value={"https://vana-qrcode.web.app/" + menu.id}
                 size={300}
                 level={"H"}
                
